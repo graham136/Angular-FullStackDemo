@@ -1,0 +1,75 @@
+<!--
+Account List Component
+  Components
+  Nav Bar          - The nav bar is a bootstrap navbar to navigate between phonebooks
+                    and phonebook entries
+
+  Bootstrap Table - The table is a bootstrap 4.0 repsonsive table
+
+  Style Classes
+  Nav Bar         - The nav bar bootstrap classes are standard bootstrap classes.
+
+  Bootstrap Table - The styles are inline so you know I can also do inline styling in contrast to
+                    the Splash component which is done with style classes. The style classes
+                    are declared the styles.css so they can be swapped in.
+
+  Animations
+  EnterLeave      - The animation is imported from Animations/EnterLeaveAnimations.
+                    This in contrast to the splash screen where it was declared in
+                    the component itself.
+
+  Functions
+  onDeleteClick(i)  - Delete the current phone entry
+  backToPhoneBooks()- Navigate bakc to the phoebook list component
+  This is component to loaded by clicking the view button on phonebook screen.
+-->
+
+<div [@EnterLeave]="'flyIn'">
+  <app-navbar></app-navbar>
+
+  <!-- Bootstrap Striped Responsive Table -->
+  <br>
+  <div class="container"
+    style="font-size: 1vw;width:90% !important;margin: 0 auto !important;background-color:white;box-shadow: 0 0 10px lightgrey">
+    <br>
+    <br>
+    <h2 style="color:crimson;font-size: 1.3vw;"><b>Phone Book: {{ currentPhoneBookName }}</b></h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>PhoneBook Name</th>
+          <th>Entry Name</th>
+          <th>Entry Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--Angular double binding with currentPhoneBookEntries
+            currentPhoneBookName    -displayed left aligned
+            EntryName      -displayed left aligned
+            EntryNumber           -currency pipe formatting-->
+        <tr *ngFor="let entry of currentPhoneBookEntries; let i = index">
+          <td>{{ currentPhoneBookName }}</td>
+          <td>{{ entry.EntryName }}</td>
+          <td>{{ entry.EntryNumber }}</td>
+          <td><button class="btn btn-danger" (click)="onDeleteClick(i)">Delete
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <!--
+            Ability to add a new Phonebook
+          -->
+          <td style="font-size: 1.2vw;"><b>Add a new Entry</b></td>
+          <td><button class="btn btn-primary" (click)="openEntryNewDialog()">Add
+            </button>
+            <button class="btn btn-warning" (click)="backToPhoneBooks()">Back
+            </button>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<!--
+Splash Component
+  Components
+  Mat-Card        - Angular Material Card
+  Image           - Angular Trademark Graphic
+  Mat-Button      - Continue Button to route to phonebook component.
+
+  Style Classes
+  SplashMatCard   - Styles the Material Card
+  SplashMatButton - Styles the Material Button
+
+  Animations
+  EnterLeave      - Animation declared in the Splash Component Itself.
+
+  Functions
+  toAccountList() - Function used to navigate to accountList component when
+                    continue button is clicked.
+
+
+  This is the 1st component to load.
+
+-->
+
+<div class="mat-card-center" [@EnterLeave]="'flyIn'">
+  <div >
+    <mat-card class="mat-card-inline">
+      <h1>ABSA</h1>
+      <h2>Full stack developer Assessment</h2>
+      <h2>Graham Payne BBD</h2>
+      <img width=90% alt="Angular Logo"
+        src="../../assets/images/banking.png">
+      <br>
+      <br>
+      <button type="submit" mat-raised-button color="primary" class="SplashMaterialButton"
+        (click)="toAccountList()">Click
+        to continue</button>
+    </mat-card>
+  </div>
+</div>

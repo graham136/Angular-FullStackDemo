@@ -1,0 +1,102 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~bootstrap/dist/css/bootstrap.css';
+
+/* Class to Center the material card on Splash Component */
+.mat-card-center{
+  width: 90%;
+  text-align:center;
+  margin: 5% 5% 5% 5%;
+}
+
+/* Class to center the contents of the material card */
+.mat-card-inline{
+  display:inline-block;
+}
+
+/* Class to right size the contents of the continue button on Splash Component */
+#SplashContinueButton {
+  margin-right: 8px;
+}
+
+/* Stlye declared in ID of TopBar in accountlist component*/
+#TopBar {
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right,crimson, darkred); /* Standard syntax (must be last) */
+  color: white;
+  margin:0px,0px,0px,0px;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 0 20px grey
+}
+
+/* Style for the main body of html.*/
+body{
+  background-color: lavender;
+  padding:0px;
+  margin:0px;
+}
+
+/* Styling for the withdraw button in the accountList component in enabled state */
+.withdrawButton {
+  background-color: #4CAF50; /* Green */
+  border: 2px solid #4CAF50;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 1vw;
+  border-radius: 4px;
+}
+
+/* Styling for the withdraw button in the accountList component in disabled state */
+.withdrawButton:disabled,
+withdrawButton[disabled]{
+  background-color:white; /* Green */
+  color:black;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 1vw;
+  border-radius: 4px;
+  border: 1px solid #4CAF50;
+}
+
+/*  The container style class for the bootstrap table container.
+    This class is can used as instead of the inline styling*/
+.bootstrapTableContainer {
+  font-size: 1vw;
+  width:90% !important;
+  margin: 0 auto !important;
+  background-color:white;
+  box-shadow: 0 0 10px lightgrey;
+}
+
+/* The text styling for the bootstrap table header "AccountList"
+    This class is can be used instead of the inline styling*/
+.bootstrapTableHeader {
+  color:crimson;
+  font-size: 1.3vw;
+}
+
+/*  The text styling to align the text left
+    This class can be used instead of the inline styling in the bootstrap table*/
+.alignTextLeft {
+  text-align:left;
+}
+
+/*
+    The text style class for the balance fields in the bootstrap table
+    This class can be used instead of the inline styling in the bootstrap table
+*/
+.fontsize2vw{
+  font-size: 1.2vw;
+}
+
+.no-margin{
+  margin: 0px 0px 0px 0px;
+}
+
+.no-padding{
+  padding: 0px 0px 0px 0px;
+}

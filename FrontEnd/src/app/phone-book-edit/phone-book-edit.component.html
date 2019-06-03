@@ -1,0 +1,39 @@
+<!--
+  Components
+  Mat-Dialog      - Angular Material Dialog
+  input           - input of phonebook name
+  button          - Sass interpretation of bootstrap warning and success buttons.
+
+  Style Classes
+  scssBtn         - Sass button
+  green           - Interpretation of success bootstrap button
+  orange          - Interpretation of warning bootstrap button
+
+  Functions
+  onOk            - Function to withdraw money and exit to account list component.
+  onCancel        - Function to cancel and exit dialog to account list component.
+
+
+  This component is loaded by clicking an enable withdraw button in account list.
+
+  -->
+
+<div class="modal-header">
+  <h4 class="modal-title">Phone Book</h4>
+</div>
+<div class="modal-body">
+  <form [formGroup]="myForm">
+    <label for="BookName">PhoneBookName: </label>
+    <input type="text" id="BookName" formControlName="BookName" required>
+    <br>
+    <ng-template [ngIf]="!myForm.controls.BookName.valid">
+      Please enter a phonebookname?
+    </ng-template>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="orange scssBtn float-right" (click)="onCancel()">Cancel</button>
+  <button type="button" class="green scssBtn float-right" (click)="onOk()"
+    [disabled]="!myForm.controls.BookName.valid">Save</button>
+</div>

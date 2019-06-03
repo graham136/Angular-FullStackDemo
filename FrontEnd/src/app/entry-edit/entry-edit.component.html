@@ -1,0 +1,58 @@
+<!--
+  Components
+  Mat-Dialog      - Angular Material Dialog
+  phonebook name  - label of phonebook name
+  entry number    - input value for entry name
+  entry name      - input value for entry name
+
+  button          - Sass interpretation of bootstrap warning and success buttons.
+
+  Style Classes
+  scssBtn         - Sass button
+  green           - Interpretation of success bootstrap button
+  orange          - Interpretation of warning bootstrap button
+
+  Functions
+  onOk            - Function to write the new entry name to database
+  onCancel        - Function to cancel and exit dialog phonebook.
+
+
+  This component is loaded by clicking an add button in phonebook.
+
+
+  Withdraw component awaits a number input and validates it:
+    1. If amount is smaller than 0.01 then OK button is disabled
+    2. If amount is larger than the maxwithdrawal computed in accountlogic OK
+       button is disabled.
+    3. If amount is valid(0.01<=amount<=maxwithdrawal) OK button is enabled.
+
+  -->
+
+  <div class="modal-header">
+    <h4 class="modal-title">Entry</h4>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="myForm">
+      <label for="BookName">PhoneBookName: {{ phoneBookName }}</label>
+      <br>
+      <label for="EntryName">EntryName: </label>
+      <input type="text" id="EntryName" formControlName="EntryName" required>
+      <br>
+      <ng-template [ngIf]="!myForm.controls.EntryName.valid">
+        Please enter a Entry Name?
+      </ng-template>
+      <br>
+      <label for="EntryNumber">EntryNumber: </label>
+      <input type="number" id="EntryNumber" formControlName="EntryNumber" required>
+      <br>
+      <ng-template [ngIf]="!myForm.controls.EntryNumber.valid">
+        Please enter a Entry Number?
+      </ng-template>
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="orange scssBtn float-right" (click)="onCancel()">Cancel</button>
+    <button type="button" class="green scssBtn float-right" (click)="onOk()"
+      [disabled]="!myForm.valid">Save</button>
+  </div>

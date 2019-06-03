@@ -1,0 +1,19 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "AzureWebJobsDashboard": "UseDevelopmentStorage=true"
+  },
+  "ConnectionStrings": {
+    //"Database": "Server=coll8cloud.database.windows.net;Initial Catalog=cbh-agent-db-dev;Persist Security Info=False;User ID=BBDAdmin;Password=BBDisgreat123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;"
+    //"Database": "Data Source=REYNIERB;Initial Catalog=Lumin8_Web;Integrated Security=True;"
+    "Database": "Data Source=GRAHAMP\\SQLEXPRESS;Initial Catalog=PhoneBookDB;Integrated Security=True;",
+    "Type": "SQL"
+    //"Database": "Data Source=JACO-LT\\SQLEXPRESS;Initial Catalog=Lumin8;Integrated Security=True;"
+  },
+  "Host": {
+    "LocalHttpPort": 7071,
+    "CORS": "*"
+  }
+
+}

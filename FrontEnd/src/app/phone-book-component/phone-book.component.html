@@ -1,0 +1,67 @@
+<!--
+Account List Component
+  Components
+  Nav Bar          - The navbar for navigation between phonebooks and entries
+
+  Bootstrap Table - The table is a bootstrap 4.0 repsonsive table
+
+  Style Classes
+  Nav Bar         - Bootstrap classes imported for nav bar.
+
+  Bootstrap Table - The styles are inline so you know I can also do inline styling in contrast to
+                    the Splash component which is done with style classes. The style classes
+                    are declared the styles.css so they can be swapped in.
+
+  Animations
+  EnterLeave      - The animation is imported from Animations/EnterLeaveAnimations.
+                    This in contrast to the splash screen where it was declared in
+                    the component itself.
+
+  Functions
+  onViewClick(i)              - Loads the entry lists for the selected phonebook
+  openPhoneBookNewDialog()    - The function to load a new phonebook
+  This is component to loaded by clicking the continue button on splash screen.
+-->
+
+<div [@EnterLeave]="'flyIn'">
+  <app-navbar></app-navbar>
+
+  <!-- Bootstrap Striped Responsive Table -->
+  <br>
+  <div class="container"
+    style="font-size: 1vw;width:90% !important;margin: 0 auto !important;background-color:white;box-shadow: 0 0 10px lightgrey">
+    <br>
+    <br>
+    <h2 style="color:crimson;font-size: 1.3vw;"><b>PhoneBook List</b></h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--Angular double binding with phonebooks
+            phonebook name    -displayed left aligned-->
+        <tr *ngFor="let phonebook of phonebooks; let i = index">
+          <td>{{ phonebook.PhoneBookName }}</td>
+          <td><button class="btn btn-success"
+              (click)="onViewClick(i)">View
+              </button>
+          </td>
+        </tr>
+        <tr>
+          <!--
+            Ability to add a new Phonebook
+          -->
+          <td style="font-size: 1.2vw;"><b>Add a new PhoneBook</b></td>
+          <td><button class="btn btn-primary"
+            (click)="openPhoneBookNewDialog()">Add
+            </button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+  </div>
+</div>
